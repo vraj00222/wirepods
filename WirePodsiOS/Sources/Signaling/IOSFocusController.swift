@@ -51,8 +51,8 @@ final class IOSFocusController: ObservableObject {
         macAudioReceiver?.stop()
     }
 
-    func claimFocus() {
-        audioController?.claimFocus(reason: "iphone-playback-start")
+    func claimFocus(mediaURL: String? = nil) {
+        audioController?.claimFocus(reason: "iphone-playback-start", mediaURL: mediaURL)
     }
 
     func releaseFocus() {

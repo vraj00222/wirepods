@@ -27,6 +27,7 @@ public struct HandoffMessage: Codable, Sendable, Equatable {
     public var sessionId: String
     public var capabilities: Capabilities?
     public var reason: String?
+    public var mediaURL: String? // for ms-level handoff: Mac plays URL directly instead of AirPlay
 
     public struct Capabilities: Codable, Sendable, Equatable {
         public var hasWiredOutput: Bool
@@ -51,7 +52,8 @@ public struct HandoffMessage: Codable, Sendable, Equatable {
                 timestamp: TimeInterval = Date().timeIntervalSince1970,
                 sessionId: String = UUID().uuidString,
                 capabilities: Capabilities? = nil,
-                reason: String? = nil) {
+                reason: String? = nil,
+                mediaURL: String? = nil) {
         self.action = action
         self.device = device
         self.deviceName = deviceName
@@ -59,6 +61,7 @@ public struct HandoffMessage: Codable, Sendable, Equatable {
         self.sessionId = sessionId
         self.capabilities = capabilities
         self.reason = reason
+        self.mediaURL = mediaURL
     }
 
     // MARK: Wire format

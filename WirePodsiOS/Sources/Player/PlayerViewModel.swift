@@ -61,6 +61,10 @@ final class PlayerViewModel: ObservableObject {
         try? AVAudioSession.sharedInstance().setPreferredIOBufferDuration(0.02)
     }
 
+    var currentURL: String? {
+        (player?.currentItem?.asset as? AVURLAsset)?.url.absoluteString ?? customURLString
+    }
+
     func togglePlayPause(focusController: IOSFocusController) {
         guard let player else { return }
         if isPlaying {
@@ -70,8 +74,8 @@ final class PlayerViewModel: ObservableObject {
         } else {
             player.play()
             isPlaying = true
-            // Claim focus when playback starts — triggers AirPlay routing if Mac is selected
-            focusController.claimFocus()
+            // MS-level: send URL to Mac so Mac plays directly (no AirPlay buffer). Fallback is AirPlay.
+            focusController.claimFocus(mediaURL: currentURL)
         }
     }
 

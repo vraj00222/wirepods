@@ -18,6 +18,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     var airPlayChecker = AirPlayReceiverChecker()
     var systemAudioStreamer: SystemAudioStreamer?
     var audioMonitor = SystemAudioMonitor()
+    var mediaPlayer = MacMediaPlayer()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupMenuBar()
@@ -47,14 +48,20 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func setupFocusController() {
         focusController = AudioFocusController(device: .mac)
+        // Also listen for URL handoff for ms-level playback (instead of AirPlay)
+        focusController.onMessageWithMediaURL = { [weak self] url in
+            print("[WirePodsMac] URL handoff → playing \(url) on wired buds (ms-level)")
+            self?.mediaPlayer.play(urlString: url)
+            BrowserMediaController.pauseAll()
+        }
         focusController.onShouldDuck = { [weak self] in
             print("[WirePodsMac] iPhone claimed — pausing browser media")
             BrowserMediaController.pauseAll()
-            // Remember trusted peer after first successful handoff on same Wi-Fi
             if let peer = self?.focusController.lastEvent { PairingStore.trustedPeerName = peer }
         }
-        focusController.onShouldResume = {
+        focusController.onShouldResume = { [weak self] in
             print("[WirePodsMac] Peer released — can resume")
+            self?.mediaPlayer.pause()
         }
         focusController.start()
 

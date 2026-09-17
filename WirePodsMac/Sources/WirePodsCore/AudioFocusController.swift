@@ -18,6 +18,7 @@ public final class AudioFocusController: ObservableObject {
 
     public var onShouldDuck: (() -> Void)?
     public var onShouldResume: (() -> Void)?
+    public var onMessageWithMediaURL: ((String) -> Void)?
 
     public init(device: HandoffDevice, deviceName: String? = nil) {
         self.device = device
@@ -41,6 +42,9 @@ public final class AudioFocusController: ObservableObject {
         transport = BonjourTransport(role: .both, deviceName: deviceName)
         transport?.onMessage = { [weak self] msg, _ in
             _ = self?.stateMachine.handle(msg)
+            if let url = msg.mediaURL, !url.isEmpty {
+                DispatchQueue.main.async { self?.onMessageWithMediaURL?(url) }
+            }
         }
         transport?.onPeerConnected = { [weak self] _ in
             DispatchQueue.main.async { self?.peerConnected = true }
@@ -69,9 +73,10 @@ public final class AudioFocusController: ObservableObject {
 
     // MARK: Public actions
 
-    public func claimFocus(reason: String? = nil) {
+    public func claimFocus(reason: String? = nil, mediaURL: String? = nil) {
         var msg = stateMachine.localClaim(device: device, name: deviceName)
         msg.reason = reason
+        msg.mediaURL = mediaURL
         _ = stateMachine.handle(msg)
         transport?.broadcast(msg)
         lastEvent = "Claimed (\(reason ?? "user"))"
