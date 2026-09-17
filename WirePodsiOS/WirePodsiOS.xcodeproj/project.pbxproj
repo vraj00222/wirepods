@@ -1,124 +1,88 @@
 // !$*UTF8*$!
 {
     archiveVersion = 1;
-    classes = {
-    };
+    classes = {};
     objectVersion = 56;
     objects = {
-
 /* Begin PBXBuildFile section */
-        0ACD6003EAB94DA2AA6AB881 /* WirePodsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FB1AE1C8C43F49F923EED /* WirePodsApp.swift */; };
-        9EC5661C590344EE81602A56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D0474AA82A4E299A4004E8 /* ContentView.swift */; };
-        D53FDD100292424C9BB74E4B /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B820F556E69408E849F2C5C /* PlayerViewModel.swift */; };
-        7DF107EFEE624376AA392D05 /* AirPlayPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C39B2712902453D917715D3 /* AirPlayPickerView.swift */; };
-        56F32362E5CA4B93907E37BE /* IOSFocusController.swift in Sources */,
-                055ADBB81E55458FAD523F27 /* HandoffProtocol.swift in Sources */,
-                B4F5B5F557454FB488E12DE5 /* BonjourTransport.swift in Sources */,
-                FE8E35F28216480B8257D730 /* AudioFocusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1129E1B1B4EB7A1A93FC3 /* IOSFocusController.swift */; };
-        055ADBB81E55458FAD523F27 /* HandoffProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E7F8637BFC4D649CE7ECD0 /* HandoffProtocol.swift */; };
-        B4F5B5F557454FB488E12DE5 /* BonjourTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E433791A5ED4455B79589AF /* BonjourTransport.swift */; };
-        FE8E35F28216480B8257D730 /* AudioFocusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B8A4D266F4F9F8398915C /* AudioFocusController.swift */; };
+        9429CC7180B5408491FB00A5 /* WirePodsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA12F7F1F8E647B9B22F250A /* WirePodsApp.swift */; };
+        CADCC558968B499E8F252ECF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5619EF761B44D1BAFCB7DB6 /* ContentView.swift */; };
+        C4CF66A0EBAC456FA2E391A6 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B19B0FEA24A4B9B06BF49 /* PlayerViewModel.swift */; };
+        AD5BB3F19129404982141449 /* AirPlayPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB069E66664730939A09E3 /* AirPlayPickerView.swift */; };
+        F6A9376EFE914DFCA3FBC67B /* IOSFocusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB457EC0D3841E3AAE604FF /* IOSFocusController.swift */; };
+        107C90D631D448AC869454D3 /* HandoffProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A973FB141A3441E980520AF /* HandoffProtocol.swift */; };
+        9DF1B0C313FC40B0AF796FC5 /* BonjourTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABC6DFB3FB0420BA37AFFF6 /* BonjourTransport.swift */; };
+        48FEF9F9DFC742E8B653D593 /* AudioFocusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F695830B6544B1ABCDDD5E /* AudioFocusController.swift */; };
+        341FC3470FC44735A4F201F6 /* PairingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2985D7AFD3F7467F8925800D /* PairingStore.swift */; };
 /* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-        B59D7F69640F4DDAB9B57625 /* WirePodsiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WirePodsiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-        C36FB1AE1C8C43F49F923EED /* WirePodsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirePodsApp.swift; sourceTree = "<group>"; };
-        D1D0474AA82A4E299A4004E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-        8B820F556E69408E849F2C5C /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
-        6C39B2712902453D917715D3 /* AirPlayPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayPickerView.swift; sourceTree = "<group>"; };
-        6EE1129E1B1B4EB7A1A93FC3 /* IOSFocusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSFocusController.swift; sourceTree = "<group>"; };
-        99E7F8637BFC4D649CE7ECD0 /* HandoffProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandoffProtocol.swift; sourceTree = "<group>"; };
-        2E433791A5ED4455B79589AF /* BonjourTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourTransport.swift; sourceTree = "<group>"; };
-        DE4B8A4D266F4F9F8398915C /* AudioFocusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFocusController.swift; sourceTree = "<group>"; };
+        4A90249A47774BFF9B7F542E /* WirePodsiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WirePodsiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        EA12F7F1F8E647B9B22F250A /* WirePodsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirePodsApp.swift; sourceTree = "<group>"; };
+        F5619EF761B44D1BAFCB7DB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+        8E3B19B0FEA24A4B9B06BF49 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+        26DB069E66664730939A09E3 /* AirPlayPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayPickerView.swift; sourceTree = "<group>"; };
+        0FB457EC0D3841E3AAE604FF /* IOSFocusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSFocusController.swift; sourceTree = "<group>"; };
+        7A973FB141A3441E980520AF /* HandoffProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandoffProtocol.swift; sourceTree = "<group>"; };
+        DABC6DFB3FB0420BA37AFFF6 /* BonjourTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourTransport.swift; sourceTree = "<group>"; };
+        07F695830B6544B1ABCDDD5E /* AudioFocusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFocusController.swift; sourceTree = "<group>"; };
+        2985D7AFD3F7467F8925800D /* PairingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
 /* Begin PBXGroup section */
-        79F0FC316789407A9F699756 = {
+        B4B245CDECC14A8CB3CAA625 /* main */ = {
             isa = PBXGroup;
-            children = (
-                26982CF299BB4B0EAEAAFDB3 /* WirePodsiOS */,
-                5A26FF53BEDF42F5932E4669 /* Products */,
-            );
+            children = (D0FE4A8471534986BDF21FEB /* WirePodsiOS */, FB8EF2B13B584801AC401F94 /* Products */,);
             sourceTree = "<group>";
         };
-        5A26FF53BEDF42F5932E4669 /* Products */ = {
+        FB8EF2B13B584801AC401F94 /* Products */ = {
             isa = PBXGroup;
-            children = (
-                B59D7F69640F4DDAB9B57625 /* WirePodsiOS.app */,
-            );
+            children = (4A90249A47774BFF9B7F542E /* WirePodsiOS.app */,);
             name = Products;
             sourceTree = "<group>";
         };
-        26982CF299BB4B0EAEAAFDB3 /* WirePodsiOS */ = {
+        D0FE4A8471534986BDF21FEB /* WirePodsiOS */ = {
             isa = PBXGroup;
-            children = (
-                C08135B2C0AE4623A667939F /* App */,
-                C31FED9093E64E3DA790C196 /* Player */,
-                45E149FBCFCE4F0DB182CB64 /* Signaling */,
-                A5F7DB3EBE4E4FA38A9DDF05 /* WirePodsCore */,
-            );
-            path = WirePodsiOS;
+            children = (F1619156AB704BD8ACEC255F /* App */, 06A3ED1CD3C34800AAD14D7B /* Player */, 303122EDD30D48F79CC4231B /* Signaling */, 1360443906D0435883FB8AAB /* WirePodsCore */,);
+            path = Sources;
             sourceTree = "<group>";
         };
-        C08135B2C0AE4623A667939F /* App */ = {
+        F1619156AB704BD8ACEC255F /* App */ = {
             isa = PBXGroup;
-            children = (
-                C36FB1AE1C8C43F49F923EED /* WirePodsApp.swift */,
-                D1D0474AA82A4E299A4004E8 /* ContentView.swift */,
-            );
+            children = (EA12F7F1F8E647B9B22F250A /* WirePodsApp.swift */, F5619EF761B44D1BAFCB7DB6 /* ContentView.swift */,);
             path = App;
             sourceTree = "<group>";
         };
-        C31FED9093E64E3DA790C196 /* Player */ = {
+        06A3ED1CD3C34800AAD14D7B /* Player */ = {
             isa = PBXGroup;
-            children = (
-                8B820F556E69408E849F2C5C /* PlayerViewModel.swift */,
-                6C39B2712902453D917715D3 /* AirPlayPickerView.swift */,
-            );
+            children = (8E3B19B0FEA24A4B9B06BF49 /* PlayerViewModel.swift */, 26DB069E66664730939A09E3 /* AirPlayPickerView.swift */,);
             path = Player;
             sourceTree = "<group>";
         };
-        45E149FBCFCE4F0DB182CB64 /* Signaling */,
-                A5F7DB3EBE4E4FA38A9DDF05 /* WirePodsCore */ = {
+        303122EDD30D48F79CC4231B /* Signaling */ = {
             isa = PBXGroup;
-            children = (
-                6EE1129E1B1B4EB7A1A93FC3 /* IOSFocusController.swift */,
-            );
+            children = (0FB457EC0D3841E3AAE604FF /* IOSFocusController.swift */,);
             path = Signaling;
             sourceTree = "<group>";
         };
-        A5F7DB3EBE4E4FA38A9DDF05 /* WirePodsCore */ = {
+        1360443906D0435883FB8AAB /* WirePodsCore */ = {
             isa = PBXGroup;
-            children = (
-                99E7F8637BFC4D649CE7ECD0 /* HandoffProtocol.swift */,
-                2E433791A5ED4455B79589AF /* BonjourTransport.swift */,
-                DE4B8A4D266F4F9F8398915C /* AudioFocusController.swift */,
-            );
+            children = (7A973FB141A3441E980520AF /* HandoffProtocol.swift */, DABC6DFB3FB0420BA37AFFF6 /* BonjourTransport.swift */, 07F695830B6544B1ABCDDD5E /* AudioFocusController.swift */, 2985D7AFD3F7467F8925800D /* PairingStore.swift */,);
             path = WirePodsCore;
             sourceTree = "<group>";
         };
 /* End PBXGroup section */
-
 /* Begin PBXNativeTarget section */
-        B97449E193AF48CDBC1176D5 /* WirePodsiOS */ = {
+        E744F3B00CBB435CB7BE1F52 /* WirePodsiOS */ = {
             isa = PBXNativeTarget;
-            buildConfigurationList = C94DC95D1CFB4DA4A3DF8540 /* Build configuration list for PBXNativeTarget "WirePodsiOS" */;
-            buildPhases = (
-                FA57A43898104D68A150FC89 /* Sources */,
-                8A0A46E44A1D475381D3BC3F /* Frameworks */,
-                43980FBF0B0449FCA5CD8D9D /* Resources */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-            );
+            buildConfigurationList = 585DD372DF3F45008D49B933 /* Build configuration list for PBXNativeTarget "WirePodsiOS" */;
+            buildPhases = (0D1BABF8AA034C17B86FC058 /* Sources */, 338F3710C0774171A29C7205 /* Frameworks */, CFC30AF51522429FAF5DCD38 /* Resources */,);
+            buildRules = ();
+            dependencies = ();
             name = WirePodsiOS;
             productName = WirePodsiOS;
-            productReference = B59D7F69640F4DDAB9B57625 /* WirePodsiOS.app */;
+            productReference = 4A90249A47774BFF9B7F542E /* WirePodsiOS.app */;
             productType = "com.apple.product-type.application";
         };
 /* End PBXNativeTarget section */
-
 /* Begin PBXProject section */
         2B3C4D5E6F7A8B9C0D1E2F3A4B /* Project object */ = {
             isa = PBXProject;
@@ -126,70 +90,56 @@
                 BuildIndependentTargetsInParallel = 1;
                 LastSwiftUpdateCheck = 1500;
                 LastUpgradeCheck = 1500;
-                TargetAttributes = {
-                    B97449E193AF48CDBC1176D5 = {
-                        CreatedOnToolsVersion = 15.0;
-                    };
-                };
+                TargetAttributes = { E744F3B00CBB435CB7BE1F52 = { CreatedOnToolsVersion = 15.0; }; };
             };
-            buildConfigurationList = AE2BB78DB8704641902682D2 /* Build configuration list for PBXProject */;
+            buildConfigurationList = 520E5F83D21B43D4AAC0B97E /* Build configuration list for PBXProject */;
             compatibilityVersion = "Xcode 14.0";
             developmentRegion = en;
             hasScannedForEncodings = 0;
-            knownRegions = (
-                en,
-                Base,
-            );
-            mainGroup = 79F0FC316789407A9F699756;
-            productRefGroup = 5A26FF53BEDF42F5932E4669 /* Products */;
+            knownRegions = (en, Base,);
+            mainGroup = B4B245CDECC14A8CB3CAA625;
+            productRefGroup = FB8EF2B13B584801AC401F94 /* Products */;
             projectDirPath = "";
             projectRoot = "";
-            targets = (
-                B97449E193AF48CDBC1176D5 /* WirePodsiOS */,
-            );
+            targets = (E744F3B00CBB435CB7BE1F52 /* WirePodsiOS */,);
         };
 /* End PBXProject section */
-
 /* Begin PBXSourcesBuildPhase section */
-        FA57A43898104D68A150FC89 /* Sources */ = {
+        0D1BABF8AA034C17B86FC058 /* Sources */ = {
             isa = PBXSourcesBuildPhase;
             buildActionMask = 2147483647;
             files = (
-                0ACD6003EAB94DA2AA6AB881 /* WirePodsApp.swift in Sources */,
-                9EC5661C590344EE81602A56 /* ContentView.swift in Sources */,
-                D53FDD100292424C9BB74E4B /* PlayerViewModel.swift in Sources */,
-                7DF107EFEE624376AA392D05 /* AirPlayPickerView.swift in Sources */,
-                56F32362E5CA4B93907E37BE /* IOSFocusController.swift in Sources */,
-                055ADBB81E55458FAD523F27 /* HandoffProtocol.swift in Sources */,
-                B4F5B5F557454FB488E12DE5 /* BonjourTransport.swift in Sources */,
-                FE8E35F28216480B8257D730 /* AudioFocusController.swift in Sources */,
+                9429CC7180B5408491FB00A5 /* WirePodsApp.swift in Sources */,
+                CADCC558968B499E8F252ECF /* ContentView.swift in Sources */,
+                C4CF66A0EBAC456FA2E391A6 /* PlayerViewModel.swift in Sources */,
+                AD5BB3F19129404982141449 /* AirPlayPickerView.swift in Sources */,
+                F6A9376EFE914DFCA3FBC67B /* IOSFocusController.swift in Sources */,
+                107C90D631D448AC869454D3 /* HandoffProtocol.swift in Sources */,
+                9DF1B0C313FC40B0AF796FC5 /* BonjourTransport.swift in Sources */,
+                48FEF9F9DFC742E8B653D593 /* AudioFocusController.swift in Sources */,
+                341FC3470FC44735A4F201F6 /* PairingStore.swift in Sources */,
             );
             runOnlyForDeploymentPostprocessing = 0;
         };
 /* End PBXSourcesBuildPhase section */
-
 /* Begin PBXFrameworksBuildPhase section */
-        8A0A46E44A1D475381D3BC3F /* Frameworks */ = {
+        338F3710C0774171A29C7205 /* Frameworks */ = {
             isa = PBXFrameworksBuildPhase;
             buildActionMask = 2147483647;
-            files = (
-            );
+            files = ();
             runOnlyForDeploymentPostprocessing = 0;
         };
 /* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXResourcesBuildPhase section */
-        43980FBF0B0449FCA5CD8D9D /* Resources */ = {
+        CFC30AF51522429FAF5DCD38 /* Resources */ = {
             isa = PBXResourcesBuildPhase;
             buildActionMask = 2147483647;
-            files = (
-            );
+            files = ();
             runOnlyForDeploymentPostprocessing = 0;
         };
 /* End PBXResourcesBuildPhase section */
-
 /* Begin XCBuildConfiguration section */
-        28A5558089D3496080C4F81C /* Debug */ = {
+        F9EA9A14F1CB4A71B5E3655D /* Debug */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
                 ALWAYS_SEARCH_USER_PATHS = NO;
@@ -203,7 +153,7 @@
             };
             name = Debug;
         };
-        66EE8DEAA5F24DDC93E859F7 /* Release */ = {
+        AA7D2C4689FD4A0B8000D7D5 /* Release */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
                 ALWAYS_SEARCH_USER_PATHS = NO;
@@ -217,7 +167,7 @@
             };
             name = Release;
         };
-        AC5BF7892E924661A9889F85 /* Debug */ = {
+        97AC2364C4A0415482707AEF /* Debug */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
                 CODE_SIGN_STYLE = Automatic;
@@ -227,19 +177,19 @@
                 INFOPLIST_KEY_UILaunchStoryboardName = "";
                 INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
                 INFOPLIST_KEY_NSLocalNetworkUsageDescription = "WirePods uses local network to discover your Mac for automatic audio handoff.";
-                INFOPLIST_KEY_NSBonjourServices = (
-                    "_wirepods._tcp",
-                    "_wirepods-audio._tcp",
-                );
+                INFOPLIST_KEY_NSBonjourServices = ("_wirepods._tcp", "_wirepods-audio._tcp",);
                 IPHONEOS_DEPLOYMENT_TARGET = 17.0;
                 PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.ios;
                 PRODUCT_NAME = WirePods;
+                SDKROOT = iphoneos;
+                SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+                SUPPORTS_MACCATALYST = NO;
                 SWIFT_VERSION = 5.0;
                 TARGETED_DEVICE_FAMILY = "1,2";
             };
             name = Debug;
         };
-        AA31C027CF0D4228B5870398 /* Release */ = {
+        6FF7D36AB7214A4F854D489C /* Release */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
                 CODE_SIGN_STYLE = Automatic;
@@ -249,36 +199,29 @@
                 INFOPLIST_KEY_UILaunchStoryboardName = "";
                 INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
                 INFOPLIST_KEY_NSLocalNetworkUsageDescription = "WirePods uses local network to discover your Mac for automatic audio handoff.";
-                INFOPLIST_KEY_NSBonjourServices = (
-                    "_wirepods._tcp",
-                    "_wirepods-audio._tcp",
-                );
+                INFOPLIST_KEY_NSBonjourServices = ("_wirepods._tcp", "_wirepods-audio._tcp",);
                 IPHONEOS_DEPLOYMENT_TARGET = 17.0;
                 PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.ios;
                 PRODUCT_NAME = WirePods;
+                SDKROOT = iphoneos;
+                SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+                SUPPORTS_MACCATALYST = NO;
                 SWIFT_VERSION = 5.0;
                 TARGETED_DEVICE_FAMILY = "1,2";
             };
             name = Release;
         };
 /* End XCBuildConfiguration section */
-
 /* Begin XCConfigurationList section */
-        AE2BB78DB8704641902682D2 /* Build configuration list for PBXProject */ = {
+        520E5F83D21B43D4AAC0B97E /* Build configuration list for PBXProject */ = {
             isa = XCConfigurationList;
-            buildConfigurations = (
-                28A5558089D3496080C4F81C /* Debug */,
-                66EE8DEAA5F24DDC93E859F7 /* Release */,
-            );
+            buildConfigurations = (F9EA9A14F1CB4A71B5E3655D /* Debug */, AA7D2C4689FD4A0B8000D7D5 /* Release */,);
             defaultConfigurationIsVisible = 0;
             defaultConfigurationName = Release;
         };
-        C94DC95D1CFB4DA4A3DF8540 /* Build configuration list for PBXNativeTarget "WirePodsiOS" */ = {
+        585DD372DF3F45008D49B933 /* Build configuration list for PBXNativeTarget "WirePodsiOS" */ = {
             isa = XCConfigurationList;
-            buildConfigurations = (
-                AC5BF7892E924661A9889F85 /* Debug */,
-                AA31C027CF0D4228B5870398 /* Release */,
-            );
+            buildConfigurations = (97AC2364C4A0415482707AEF /* Debug */, 6FF7D36AB7214A4F854D489C /* Release */,);
             defaultConfigurationIsVisible = 0;
             defaultConfigurationName = Release;
         };

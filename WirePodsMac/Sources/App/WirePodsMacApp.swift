@@ -1,5 +1,4 @@
 import SwiftUI
-import WirePodsCore
 
 @main
 struct WirePodsMacApp: App {
@@ -18,6 +17,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     var focusController: AudioFocusController!
     var airPlayChecker = AirPlayReceiverChecker()
     var systemAudioStreamer: SystemAudioStreamer?
+    var audioMonitor = SystemAudioMonitor()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupMenuBar()
@@ -48,13 +48,23 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private func setupFocusController() {
         focusController = AudioFocusController(device: .mac)
         focusController.onShouldDuck = { [weak self] in
-            print("[WirePodsMac] Ducking — pausing browser media")
+            print("[WirePodsMac] iPhone claimed — pausing browser media")
             BrowserMediaController.pauseAll()
+            // Remember trusted peer after first successful handoff on same Wi-Fi
+            if let peer = self?.focusController.lastEvent { PairingStore.trustedPeerName = peer }
         }
         focusController.onShouldResume = {
             print("[WirePodsMac] Peer released — can resume")
         }
         focusController.start()
+
+        // Zero-touch: when Mac system audio starts, auto-claim so iPhone ducks. No manual button needed.
+        audioMonitor.onMacBecameActive = { [weak self] in
+            guard let self else { return }
+            print("[WirePodsMac] System audio detected — auto-claiming Mac focus")
+            self.focusController.claimFocus(reason: "mac-audio-detected")
+        }
+        audioMonitor.start()
     }
 
     private func setupSystemAudioStreamer() {

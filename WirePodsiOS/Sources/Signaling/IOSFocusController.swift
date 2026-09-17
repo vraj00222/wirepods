@@ -1,7 +1,6 @@
 import Foundation
 import Combine
 import Network
-import WirePodsCore
 
 @available(iOS 17, *)
 @MainActor

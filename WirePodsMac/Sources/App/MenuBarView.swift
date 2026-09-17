@@ -1,5 +1,4 @@
 import SwiftUI
-import WirePodsCore
 
 struct MenuBarView: View {
     weak var delegate: AppDelegate?
