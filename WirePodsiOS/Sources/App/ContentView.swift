@@ -81,13 +81,13 @@ struct ContentView: View {
                         }.buttonStyle(.plain).font(.caption).foregroundStyle(.red)
                     }
                     Toggle(isOn: $listenToMac) {
-                        Label("Listen to Mac audio on this phone", systemImage: "macbook.and.iphone")
+                        Label("Listen to Mac audio on this phone (optional)", systemImage: "macbook.and.iphone")
                     }
                     .onChange(of: listenToMac) { _, on in
                         if on { focusController.startMacAudioStream() }
                         else { focusController.stopMacAudioStream() }
                     }
-                    Text("Streams Mac system audio to phone over Wi-Fi. Needs Screen Recording on Mac. After pairing, this is automatic when Mac isn't playing.")
+                    Text("Optional: streams Mac audio to phone over Wi-Fi. Off by default for your use-case — you look at the iPhone screen, so only iPhone → Mac is needed. No Screen Recording prompt unless you turn this on.")
                         .font(.caption2).foregroundStyle(.secondary)
                 }
                 .font(.caption)

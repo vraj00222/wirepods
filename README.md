@@ -44,7 +44,7 @@
 
 - iOS requires a **user gesture** to show `AVRoutePickerView` the first time you pick an AirPlay target. Apple provides no public API to force a route programmatically (private API `MPAVRoutingController` would get App Store rejected). After the first pick, iOS will auto-reconnect to the same target if it's available.
 - iOS does not let any app intercept **Reels / YouTube app** audio unless you own the playback (`AVAudioSession` is per-app). That's the sandbox wall Path C bypasses with a jailbreak hook.
-- macOS → iPhone audio can't use AirPlay (iPhone is not an AirPlay receiver). This repo uses **ScreenCaptureKit (macOS 13+)** to capture system audio and streams it over the local network to the iPhone app. Requires Screen Recording permission once.
+- macOS → iPhone audio can't use AirPlay (iPhone is not an AirPlay receiver). Mac→iPhone streaming (ScreenCaptureKit) is disabled by default for your use-case — you look at the iPhone screen, so only iPhone→Mac via AirPlay is needed. No Screen Recording prompt.
 
 ---
 
@@ -60,42 +60,48 @@
 
 ---
 
-## Install Path B (automatic, for content you control)
+## Install — simplest (no cable needed after first run)
 
-### Requirements
+> **Your setup:** M4 MacBook Pro + iPhone 17, same Wi-Fi, wired buds in Mac. No cable needed after the first iPhone build.
 
-- Mac: macOS 14+ (Sonoma), Xcode 15+, wired buds plugged into Mac
-- iPhone: iOS 17+, same Wi-Fi as Mac, Apple ID signed in
-- Both: Developer Mode enabled to sideload (free Apple ID works for 7-day cert, paid for longer)
-
-### 1. Clone & open
+### One-liner on Mac (automates checks)
 
 ```bash
 git clone git@github.com:vraj00222/wirepods.git
 cd wirepods
-open WirePodsMac/WirePodsMac.xcodeproj
-open WirePodsiOS/WirePodsiOS.xcodeproj
-# or open Package.swift in Xcode to see Shared core
+curl -fsSL https://vraj00222.github.io/wirepods-website/install-mac.sh | bash
+# or: ./scripts/install-mac.sh
+./scripts/doctor.sh  # verify everything ✓
 ```
 
-### 2. Mac companion
+What that script automates: checks macOS 14+ & Xcode, downloads `WirePodsMac.zip` → `/Applications`, checks Wi-Fi SSID (must match iPhone) + wired buds, hints if AirPlay Receiver is off, launches 🎧 menu bar.
 
-1. Open `WirePodsMac/WirePodsMac.xcodeproj`.
-2. Signing: select your Team (free Apple ID ok).
-3. Run (⌘R). Grant **Screen Recording** when prompted (needed for Mac→iPhone streaming). App appears as 🎧 in menu bar.
-4. Check **AirPlay Receiver** shows "Enabled" (it will prompt to open System Settings if off). Enable **Launch at Login**.
+### iPhone — one cable build, then wireless on same Wi-Fi
 
-### 3. iPhone app
+```bash
+open WirePodsiOS/WirePodsiOS.xcodeproj
+# Signing → your Team → select iPhone 17 via cable → ⌘R → allow Local Network → tap AirPlay → pick Mac once → Done — hands-free
+# Then: Xcode → Window → Devices and Simulators → iPhone → ✓ Connect via Network → unplug cable
+# Next time (no cable): ./scripts/install-ios-wireless.sh  or Xcode → select iPhone (network icon) → ⌘R
+```
 
-1. Open `WirePodsiOS/WirePodsiOS.xcodeproj`.
-2. Signing → your Team.
-3. Run on device (not simulator — AirPlay + Bonjour need real device). Grant **Local Network** permission.
-4. First launch: tap the **AirPlay** button in the player and pick your **Mac** (e.g. "Vraj's MacBook AirPlay"). This one-time pick is remembered.
-5. Play something inside the WirePods player. Audio should now come from the Mac's wired buds. Switch to Mac YouTube, press pause/play — watch the status flip.
+After that pairing, **no cable, no taps**: play in WirePods iPhone app → sound in Mac's wired buds; play YouTube on Mac → `SystemAudioMonitor` auto-claims and iPhone ducks.
 
-### 4. Vice-versa (Mac audio → phone speaker/buds if plugged into phone)
+> Prefer the pretty site? https://vraj00222.github.io/wirepods-website/ — Download for Mac + Download for iPhone buttons + copy-paste one-liner.
 
-- In the iPhone app, tap **Listen to Mac**. The Mac will start its ScreenCaptureKit stream; audio from the Mac (YouTube etc.) plays on the phone.
+### Requirements (same as above)
+
+- Mac: macOS 14+, Xcode 15+, wired buds plugged into Mac, same Wi-Fi + same Apple ID
+- iPhone: iOS 17+, same Wi-Fi, Developer Mode for sideload (free Apple ID = 7-day cert)
+
+### Manual fallback (if scripts fail)
+
+Mac companion: open `WirePodsMac/WirePodsMac.xcodeproj` → Signing → Run (⌘R) → check AirPlay Receiver enabled. No Screen Recording needed.
+iPhone: open `WirePodsiOS/WirePodsiOS.xcodeproj` → Signing → Run on device → allow Local Network → AirPlay pick once.
+
+### Vice-versa (Mac audio → phone)
+
+Optional: `Listen to Mac` is off by default — you watch the iPhone screen, only iPhone → Mac via AirPlay is needed.
 
 ---
 
@@ -144,7 +150,7 @@ Each branch is pushed independently and tested via `scripts/test.sh` before merg
 | Permission | Where | Why | Can say no? |
 |---|---|---|---|
 | Local Network | iPhone + Mac | Bonjour discovery `_wirepods._tcp` | No — handoff won't find peer |
-| Screen Recording | Mac | ScreenCaptureKit system audio capture for Mac→iPhone | Yes — then Mac→iPhone streaming disabled, iPhone→Mac still works |
+| Screen Recording | Mac | Only if you toggle 'Listen to Mac' (Mac→iPhone) | Not needed for your use-case (iPhone→Mac) |
 | Accessibility | Mac (optional) | AppleScript pause of Chrome/Safari YouTube tabs | Yes — then manual pause |
 
 No data leaves the LAN. No third-party SDKs. No analytics.
@@ -155,7 +161,7 @@ No data leaves the LAN. No third-party SDKs. No analytics.
 
 - **Mac not appearing in AirPlay picker**: Same Wi-Fi, same Apple ID, AirPlay Receiver ON, firewall allows incoming. Try wired iPhone via cable — lower latency.
 - **Route picker won't auto-select**: iOS requires first manual pick. Tap the AirPlay icon once and pick your Mac; next time it auto-connects if Mac is advertising.
-- **Mac→iPhone stream silent**: Check Mac System Settings → Privacy → Screen Recording → WirePodsMac is enabled (restart app after).
+- **Mac→iPhone stream**: disabled by default (you look at iPhone screen — only iPhone→Mac needed).
 - **Handoff flaps**: Keep devices on same Wi-Fi band (both 5 GHz). The app debounces claims by 800 ms.
 
 ---

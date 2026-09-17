@@ -68,7 +68,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func setupSystemAudioStreamer() {
-        systemAudioStreamer = SystemAudioStreamer()
+        // Screen Recording (Mac → iPhone streaming) is optional and disabled for your use-case
+        // You look at the iPhone screen, you only need iPhone → Mac via AirPlay (no capture).
+        // Keep streamer nil unless you explicitly enable "Listen to Mac" from the phone.
+        systemAudioStreamer = nil
     }
 
     @objc func togglePopover() {
