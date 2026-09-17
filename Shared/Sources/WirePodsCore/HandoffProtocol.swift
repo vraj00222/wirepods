@@ -109,7 +109,7 @@ public enum AudioFocus: String, Codable, Sendable {
 public final class HandoffStateMachine: @unchecked Sendable {
     public private(set) var focus: AudioFocus = .idle
     private var lastClaim: HandoffMessage?
-    private let debounceInterval: TimeInterval = 0.2 // low latency: was 0.8
+    private let debounceInterval: TimeInterval = 0.05 // ultra low: was 0.2
     private var lastTransitionAt: TimeInterval = 0
     private let queue = DispatchQueue(label: "wirepods.statemachine")
 

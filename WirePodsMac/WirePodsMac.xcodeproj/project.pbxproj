@@ -11,6 +11,7 @@
         94385FE487BE46ADBCC19082 /* SystemAudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49019159F35C43CBAA2789AA /* SystemAudioDevice.swift */; };
         2A3D6477CFA3433D89B6AEAD /* SystemAudioStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EA72CF452C4BAE98D4A9EF /* SystemAudioStreamer.swift */; };
         FBC4FC2DBAED4DE8974CF004 /* SystemAudioMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB54646B4E7C4EACB92C9F5A /* SystemAudioMonitor.swift */; };
+        F941BB32E1724FC49594F664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB66E99C63DA4E71A8212126 /* Assets.xcassets */; };
         2414F3B04B244818BA4F93FF /* MacMediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F8F0351884A53BE7DA0E9 /* MacMediaPlayer.swift */; };
         DD7AD903551E42A689762E8B /* BrowserMediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AFA3CB822A4ABA914BFF38 /* BrowserMediaController.swift */; };
         38F55C2C01144BFEA8ECADC0 /* HandoffProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BEA509E429412FAF2FC8E3 /* HandoffProtocol.swift */; };
@@ -26,6 +27,7 @@
         49019159F35C43CBAA2789AA /* SystemAudioDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAudioDevice.swift; sourceTree = "<group>"; };
         F5EA72CF452C4BAE98D4A9EF /* SystemAudioStreamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAudioStreamer.swift; sourceTree = "<group>"; };
         EB54646B4E7C4EACB92C9F5A /* SystemAudioMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAudioMonitor.swift; sourceTree = "<group>"; };
+        AB66E99C63DA4E71A8212126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
         AA8F8F0351884A53BE7DA0E9 /* MacMediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMediaPlayer.swift; sourceTree = "<group>"; };
         86AFA3CB822A4ABA914BFF38 /* BrowserMediaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMediaController.swift; sourceTree = "<group>"; };
         00BEA509E429412FAF2FC8E3 /* HandoffProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandoffProtocol.swift; sourceTree = "<group>"; };
@@ -67,7 +69,8 @@
         };
         31A56372E75E47B5ADC68573 /* Audio */ = {
             isa = PBXGroup;
-            children = (2A2E91BEC8E84B8BB880C161 /* AirPlayReceiverChecker.swift */, 49019159F35C43CBAA2789AA /* SystemAudioDevice.swift */, F5EA72CF452C4BAE98D4A9EF /* SystemAudioStreamer.swift */, EB54646B4E7C4EACB92C9F5A /* SystemAudioMonitor.swift */, AA8F8F0351884A53BE7DA0E9 /* MacMediaPlayer.swift */);
+            children = (2A2E91BEC8E84B8BB880C161 /* AirPlayReceiverChecker.swift */, 49019159F35C43CBAA2789AA /* SystemAudioDevice.swift */, F5EA72CF452C4BAE98D4A9EF /* SystemAudioStreamer.swift */, EB54646B4E7C4EACB92C9F5A /* SystemAudioMonitor.swift */,
+                AB66E99C63DA4E71A8212126 /* Assets.xcassets */, AA8F8F0351884A53BE7DA0E9 /* MacMediaPlayer.swift */);
             path = Audio;
             sourceTree = "<group>";
         };
@@ -151,7 +154,8 @@
         001F6CBD028D49CE8656D7C5 /* Resources */ = {
             isa = PBXResourcesBuildPhase;
             buildActionMask = 2147483647;
-            files = ();
+            files = (
+                F941BB32E1724FC49594F664 /* Assets.xcassets in Resources */,);
             runOnlyForDeploymentPostprocessing = 0;
         };
 /* End PBXResourcesBuildPhase section */
@@ -200,6 +204,7 @@
                 MACOSX_DEPLOYMENT_TARGET = 14.0;
                 PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.mac;
                 PRODUCT_NAME = WirePodsMac;
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
                 SWIFT_EMBED_LIBRARIES_WITH_USR_LIB = YES;
                 SWIFT_VERSION = 5.0;
             };
@@ -217,6 +222,7 @@
                 MACOSX_DEPLOYMENT_TARGET = 14.0;
                 PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.mac;
                 PRODUCT_NAME = WirePodsMac;
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
                 SWIFT_EMBED_LIBRARIES_WITH_USR_LIB = YES;
                 SWIFT_VERSION = 5.0;
             };

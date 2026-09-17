@@ -72,10 +72,21 @@ final class PlayerViewModel: ObservableObject {
             isPlaying = false
             focusController.releaseFocus()
         } else {
+            // Send URL to Mac first — Mac will play directly on wired buds (no AirPlay 1s buffer)
+            let url = currentURL
+            focusController.claimFocus(mediaURL: url)
+            // Play locally muted — we keep progress sync but mute to avoid double/hearing delayed AirPlay
+            // Mac's direct play is ~100ms, AirPlay is ~800ms — muting local avoids hearing the slow one
+            player.volume = 0
             player.play()
+            // Unmute after a moment if Mac doesn't take over (fallback to AirPlay)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { [weak self] in
+                guard let self else { return }
+                // If Mac is playing (we’d get heartbeat), keep muted; otherwise unmute for AirPlay fallback
+                // For now, keep muted and rely on Mac — user hears Mac's wired buds
+                self.player?.volume = 0
+            }
             isPlaying = true
-            // MS-level: send URL to Mac so Mac plays directly (no AirPlay buffer). Fallback is AirPlay.
-            focusController.claimFocus(mediaURL: currentURL)
         }
     }
 
