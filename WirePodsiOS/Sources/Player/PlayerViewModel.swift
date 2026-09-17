@@ -52,7 +52,7 @@ final class PlayerViewModel: ObservableObject {
             player?.replaceCurrentItem(with: item)
         }
         // Pre-warm audio session
-        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.allowAirPlay])
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
     }
 
     func togglePlayPause(focusController: IOSFocusController) {
