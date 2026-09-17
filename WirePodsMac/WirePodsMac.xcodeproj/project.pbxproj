@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 56;
+    objects = {
+
+/* Begin PBXBuildFile section */
+        107C3D6F211943BFB8BC61E7 /* WirePodsMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4C6FF61CC431EB030D27C /* WirePodsMacApp.swift */; };
+        6DA2461ACA2F407C930EF082 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90EBD4308D14A309C59D6B2 /* MenuBarView.swift */; };
+        6EB704EABE0C4934BE5EEFAD /* AirPlayReceiverChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9B301781D421ABA99B93E /* AirPlayReceiverChecker.swift */; };
+        46CE174783C44195BD403011 /* SystemAudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64AD5F6652248E9A0DBCD93 /* SystemAudioDevice.swift */; };
+        EB503B37E2F34F15AEC0C8AE /* SystemAudioStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB622287D6F40E880EBA1C1 /* SystemAudioStreamer.swift */; };
+        1B2F37FBA0324BC987BF2B1D /* BrowserMediaController.swift in Sources */,
+                82B03DA3FE0843849F3B3E83 /* HandoffProtocol.swift in Sources */,
+                1E59702B804D4D7B848D5466 /* BonjourTransport.swift in Sources */,
+                9F8B6681CC914A40B555B9F1 /* AudioFocusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD305ACBE14B4A3C8B70D984 /* BrowserMediaController.swift */; };
+        82B03DA3FE0843849F3B3E83 /* HandoffProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5535BB9A4EDA4DC28EB37694 /* HandoffProtocol.swift */; };
+        1E59702B804D4D7B848D5466 /* BonjourTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F4F5088E34A81816D1238 /* BonjourTransport.swift */; };
+        9F8B6681CC914A40B555B9F1 /* AudioFocusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C818D963F1407CB39CCBAE /* AudioFocusController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+        3E8B0732587C499380C09DD2 /* WirePodsMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WirePodsMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        B1F4C6FF61CC431EB030D27C /* WirePodsMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirePodsMacApp.swift; sourceTree = "<group>"; };
+        A90EBD4308D14A309C59D6B2 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+        19A9B301781D421ABA99B93E /* AirPlayReceiverChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayReceiverChecker.swift; sourceTree = "<group>"; };
+        F64AD5F6652248E9A0DBCD93 /* SystemAudioDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAudioDevice.swift; sourceTree = "<group>"; };
+        ADB622287D6F40E880EBA1C1 /* SystemAudioStreamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAudioStreamer.swift; sourceTree = "<group>"; };
+        AD305ACBE14B4A3C8B70D984 /* BrowserMediaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMediaController.swift; sourceTree = "<group>"; };
+        5535BB9A4EDA4DC28EB37694 /* HandoffProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandoffProtocol.swift; sourceTree = "<group>"; };
+        860F4F5088E34A81816D1238 /* BonjourTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourTransport.swift; sourceTree = "<group>"; };
+        F3C818D963F1407CB39CCBAE /* AudioFocusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFocusController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+        EA27D86E65C0430D8072711F = {
+            isa = PBXGroup;
+            children = (
+                CAE2A16047CB4068A7B415F3 /* WirePodsMac */,
+                48D1B1A112AD4A1782846609 /* Products */,
+            );
+            sourceTree = "<group>";
+        };
+        48D1B1A112AD4A1782846609 /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                3E8B0732587C499380C09DD2 /* WirePodsMac.app */,
+            );
+            name = Products;
+            sourceTree = "<group>";
+        };
+        CAE2A16047CB4068A7B415F3 /* WirePodsMac */ = {
+            isa = PBXGroup;
+            children = (
+                5F3479ECB4104EDF8EEB6B15 /* App */,
+                B88B0C304B12445B9FCAD3A5 /* Audio */,
+                92535D4B1FCD4BBB86110AD7 /* Automation */,
+                7E1B5E6C618A410D8F7AB089 /* WirePodsCore */,
+            );
+            path = WirePodsMac;
+            sourceTree = "<group>";
+        };
+        5F3479ECB4104EDF8EEB6B15 /* App */ = {
+            isa = PBXGroup;
+            children = (
+                B1F4C6FF61CC431EB030D27C /* WirePodsMacApp.swift */,
+                A90EBD4308D14A309C59D6B2 /* MenuBarView.swift */,
+            );
+            path = App;
+            sourceTree = "<group>";
+        };
+        B88B0C304B12445B9FCAD3A5 /* Audio */ = {
+            isa = PBXGroup;
+            children = (
+                19A9B301781D421ABA99B93E /* AirPlayReceiverChecker.swift */,
+                F64AD5F6652248E9A0DBCD93 /* SystemAudioDevice.swift */,
+                ADB622287D6F40E880EBA1C1 /* SystemAudioStreamer.swift */,
+            );
+            path = Audio;
+            sourceTree = "<group>";
+        };
+        92535D4B1FCD4BBB86110AD7 /* Automation */,
+                7E1B5E6C618A410D8F7AB089 /* WirePodsCore */ = {
+            isa = PBXGroup;
+            children = (
+                AD305ACBE14B4A3C8B70D984 /* BrowserMediaController.swift */,
+            );
+            path = Automation;
+            sourceTree = "<group>";
+        };
+        7E1B5E6C618A410D8F7AB089 /* WirePodsCore */ = {
+            isa = PBXGroup;
+            children = (
+                5535BB9A4EDA4DC28EB37694 /* HandoffProtocol.swift */,
+                860F4F5088E34A81816D1238 /* BonjourTransport.swift */,
+                F3C818D963F1407CB39CCBAE /* AudioFocusController.swift */,
+            );
+            path = WirePodsCore;
+            sourceTree = "<group>";
+        };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+        72797FFDF896403CB4E0D5D0 /* WirePodsMac */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = C1161DB2334548DB95338762 /* Build configuration list for PBXNativeTarget "WirePodsMac" */;
+            buildPhases = (
+                5BC6EB1624CE4B0BAC06ABDD /* Sources */,
+                A697A6B2FC904A9ABB259D82 /* Frameworks */,
+                3DA202911C33458DAB14641A /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = WirePodsMac;
+            productName = WirePodsMac;
+            productReference = 3E8B0732587C499380C09DD2 /* WirePodsMac.app */;
+            productType = "com.apple.product-type.application";
+        };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+        1A2B3C4D5E6F7A8B9C0D1E2F /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                BuildIndependentTargetsInParallel = 1;
+                LastSwiftUpdateCheck = 1500;
+                LastUpgradeCheck = 1500;
+                TargetAttributes = {
+                    72797FFDF896403CB4E0D5D0 = {
+                        CreatedOnToolsVersion = 15.0;
+                    };
+                };
+            };
+            buildConfigurationList = C0F2382B80FD4210A22AB37C /* Build configuration list for PBXProject */;
+            compatibilityVersion = "Xcode 14.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+                Base,
+            );
+            mainGroup = EA27D86E65C0430D8072711F;
+            productRefGroup = 48D1B1A112AD4A1782846609 /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                72797FFDF896403CB4E0D5D0 /* WirePodsMac */,
+            );
+        };
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+        5BC6EB1624CE4B0BAC06ABDD /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                107C3D6F211943BFB8BC61E7 /* WirePodsMacApp.swift in Sources */,
+                6DA2461ACA2F407C930EF082 /* MenuBarView.swift in Sources */,
+                6EB704EABE0C4934BE5EEFAD /* AirPlayReceiverChecker.swift in Sources */,
+                46CE174783C44195BD403011 /* SystemAudioDevice.swift in Sources */,
+                EB503B37E2F34F15AEC0C8AE /* SystemAudioStreamer.swift in Sources */,
+                1B2F37FBA0324BC987BF2B1D /* BrowserMediaController.swift in Sources */,
+                82B03DA3FE0843849F3B3E83 /* HandoffProtocol.swift in Sources */,
+                1E59702B804D4D7B848D5466 /* BonjourTransport.swift in Sources */,
+                9F8B6681CC914A40B555B9F1 /* AudioFocusController.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXFrameworksBuildPhase section */
+        A697A6B2FC904A9ABB259D82 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+        3DA202911C33458DAB14641A /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+        8EDD1E59CEDF42B7A19FE8FC /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ENABLE_MODULES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                GENERATE_INFOPLIST_FILE = YES;
+                MARKETING_VERSION = 1.0;
+                SWIFT_EMBED_LIBRARIES_WITH_USR_LIB = YES;
+                SWIFT_VERSION = 5.0;
+                MACOSX_DEPLOYMENT_TARGET = 14.0;
+            };
+            name = Debug;
+        };
+        552061B98EF24AD689606E2C /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ENABLE_MODULES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                GENERATE_INFOPLIST_FILE = YES;
+                MARKETING_VERSION = 1.0;
+                SWIFT_EMBED_LIBRARIES_WITH_USR_LIB = YES;
+                SWIFT_VERSION = 5.0;
+                MACOSX_DEPLOYMENT_TARGET = 14.0;
+            };
+            name = Release;
+        };
+        02388480EC784AFC933FBF0C /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+                CODE_SIGN_STYLE = Automatic;
+                COMBINE_HIDPI_IMAGES = YES;
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_FILE = "";
+                INFOPLIST_KEY_LSUIElement = YES;
+                INFOPLIST_KEY_NSHumanReadableCopyright = "";
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/../Frameworks",
+                );
+                MACOSX_DEPLOYMENT_TARGET = 14.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.mac;
+                PRODUCT_NAME = WirePodsMac;
+                SWIFT_EMBED_LIBRARIES_WITH_USR_LIB = YES;
+                SWIFT_VERSION = 5.0;
+            };
+            name = Debug;
+        };
+        AF54819D78F84941A82E89F4 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+                CODE_SIGN_STYLE = Automatic;
+                COMBINE_HIDPI_IMAGES = YES;
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_FILE = "";
+                INFOPLIST_KEY_LSUIElement = YES;
+                INFOPLIST_KEY_NSHumanReadableCopyright = "";
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/../Frameworks",
+                );
+                MACOSX_DEPLOYMENT_TARGET = 14.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.mac;
+                PRODUCT_NAME = WirePodsMac;
+                SWIFT_EMBED_LIBRARIES_WITH_USR_LIB = YES;
+                SWIFT_VERSION = 5.0;
+            };
+            name = Release;
+        };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+        C0F2382B80FD4210A22AB37C /* Build configuration list for PBXProject */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                8EDD1E59CEDF42B7A19FE8FC /* Debug */,
+                552061B98EF24AD689606E2C /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        C1161DB2334548DB95338762 /* Build configuration list for PBXNativeTarget "WirePodsMac" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                02388480EC784AFC933FBF0C /* Debug */,
+                AF54819D78F84941A82E89F4 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+/* End XCConfigurationList section */
+    };
+    rootObject = 1A2B3C4D5E6F7A8B9C0D1E2F /* Project object */;
+}
