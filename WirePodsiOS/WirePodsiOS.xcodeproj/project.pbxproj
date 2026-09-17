@@ -29,6 +29,7 @@
 		DABC6DFB3FB0420BA37AFFF6 /* BonjourTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourTransport.swift; sourceTree = "<group>"; };
 		EA12F7F1F8E647B9B22F250A /* WirePodsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirePodsApp.swift; sourceTree = "<group>"; };
 		F5619EF761B44D1BAFCB7DB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+        A7269D90D69F4B22BEE75A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				EA12F7F1F8E647B9B22F250A /* WirePodsApp.swift */,
+                A7269D90D69F4B22BEE75A20 /* Info.plist */,
 				F5619EF761B44D1BAFCB7DB6 /* ContentView.swift */,
 			);
 			path = App;
@@ -197,14 +199,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5BJBUV527P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSBonjourServices = "_wirepods._tcp _wirepods-audio._tcp";
+                INFOPLIST_FILE = "Sources/Info.plist";
+				INFOPLIST_KEY_NSBonjourServices = ( "_wirepods._tcp", "_wirepods-audio._tcp" );
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "WirePods uses local network to discover your Mac for automatic audio handoff.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.ios;
+				INFOPLIST_FILE = "Sources/Info.plist";
+                PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.ios;
 				PRODUCT_NAME = WirePods;
                 ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				SDKROOT = iphoneos;
@@ -221,14 +225,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5BJBUV527P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSBonjourServices = "_wirepods._tcp _wirepods-audio._tcp";
+				INFOPLIST_KEY_NSBonjourServices = ( "_wirepods._tcp", "_wirepods-audio._tcp" );
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "WirePods uses local network to discover your Mac for automatic audio handoff.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.ios;
+				INFOPLIST_FILE = "Sources/Info.plist";
+                PRODUCT_BUNDLE_IDENTIFIER = com.wirepods.ios;
 				PRODUCT_NAME = WirePods;
                 ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				SDKROOT = iphoneos;
