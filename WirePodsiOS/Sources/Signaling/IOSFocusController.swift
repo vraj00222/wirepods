@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import UIKit
 import Network
 
 @available(iOS 17, *)
