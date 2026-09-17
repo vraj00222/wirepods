@@ -21,7 +21,7 @@ public final class AudioFocusController: ObservableObject {
 
     public init(device: HandoffDevice, deviceName: String? = nil) {
         self.device = device
-        self.deviceName = deviceName ?? (Host.current().localizedName ?? "Unknown")
+        self.deviceName = deviceName ?? (ProcessInfo.processInfo.hostName)
 
         stateMachine.onFocusChange = { [weak self] focus, msg in
             guard let self else { return }

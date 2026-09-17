@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 import AVFoundation
 import Combine
 
@@ -82,14 +83,15 @@ final class PlayerViewModel: ObservableObject {
 
     private func addTimeObserver() {
         timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.5, preferredTimescale: 600), queue: .main) { [weak self] time in
-            guard let self, let item = self.player?.currentItem else { return }
-            let duration = item.duration.seconds
-            if duration.isFinite && duration > 0 {
-                self.progress = time.seconds / duration
-            }
-            // Auto-release when finished
-            if time.seconds >= duration - 0.3 && duration.isFinite {
-                self.isPlaying = false
+            Task { @MainActor in
+                guard let self, let item = self.player?.currentItem else { return }
+                let duration = item.duration.seconds
+                if duration.isFinite && duration > 0 {
+                    self.progress = time.seconds / duration
+                }
+                if time.seconds >= duration - 0.3 && duration.isFinite {
+                    self.isPlaying = false
+                }
             }
         }
     }

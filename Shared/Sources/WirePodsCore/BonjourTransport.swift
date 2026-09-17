@@ -22,7 +22,7 @@ public final class BonjourTransport: NSObject, Sendable {
     public var onPeerConnected: ((String) -> Void)?
     public var onPeerDisconnected: ((String) -> Void)?
 
-    public init(role: Role = .both, deviceName: String = Host.current().localizedName ?? "WirePods") {
+    public init(role: Role = .both, deviceName: String = ProcessInfo.processInfo.hostName) {
         self.role = role
         self.deviceName = deviceName
         super.init()

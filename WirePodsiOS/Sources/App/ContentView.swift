@@ -41,7 +41,7 @@ struct ContentView: View {
                             .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.blue.opacity(0.4), lineWidth: 1))
                         Button("Done — go hands-free") {
                             PairingStore.hasCompletedOnboarding = true
-                            if let name = focusController.lastEvent { PairingStore.trustedPeerName = name }
+                            PairingStore.trustedPeerName = focusController.lastEvent
                             showPairing = false
                         }
                         .buttonStyle(.borderedProminent).controlSize(.small)

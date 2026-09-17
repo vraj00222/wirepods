@@ -47,7 +47,7 @@ public struct HandoffMessage: Codable, Sendable, Equatable {
 
     public init(action: HandoffAction,
                 device: HandoffDevice,
-                deviceName: String = Host.current().localizedName ?? "Unknown",
+                deviceName: String = ProcessInfo.processInfo.hostName,
                 timestamp: TimeInterval = Date().timeIntervalSince1970,
                 sessionId: String = UUID().uuidString,
                 capabilities: Capabilities? = nil,
