@@ -11,11 +11,11 @@ final class SystemAudioMonitor {
     var onMacBecameActive: (() -> Void)?
     var onMacBecameIdle: (() -> Void)?
 
-    func start(interval: TimeInterval = 1.0) {
+    func start(interval: TimeInterval = 0.3) {
         timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { [weak self] _ in
             self?.check()
         }
-        timer?.tolerance = 0.3
+        timer?.tolerance = 0.05
     }
 
     func stop() {
@@ -26,8 +26,7 @@ final class SystemAudioMonitor {
     private func check() {
         let active = Self.isSystemAudioActive()
         if active && !wasActive {
-            // Debounce: wait a bit to avoid flicker on short sounds
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
                 if Self.isSystemAudioActive() {
                     self?.onMacBecameActive?()
                 }

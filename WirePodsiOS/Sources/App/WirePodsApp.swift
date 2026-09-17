@@ -14,8 +14,10 @@ struct WirePodsApp: App {
 
     private func configureAudioSession() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
+            let s = AVAudioSession.sharedInstance()
+            try s.setCategory(.playback, mode: .default, options: [])
+            try s.setPreferredIOBufferDuration(0.02) // low latency: 20ms
+            try s.setActive(true)
         } catch {
             print("[WirePods] AVAudioSession failed: \(error)")
         }

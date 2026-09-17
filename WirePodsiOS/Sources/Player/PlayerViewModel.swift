@@ -43,16 +43,22 @@ final class PlayerViewModel: ObservableObject {
         self.title = title
         subtitle = url.host ?? url.absoluteString
         let item = AVPlayerItem(url: url)
+        item.preferredForwardBufferDuration = 0.5 // low latency: was  default ~5s
+        // Don't wait to minimize stalling
+        item.canUseNetworkResourcesForLiveStreamingWhilePaused = false
         if player == nil {
             player = AVPlayer(playerItem: item)
             player?.allowsExternalPlayback = true
             player?.usesExternalPlaybackWhileExternalScreenIsActive = false
+            player?.automaticallyWaitsToMinimizeStalling = false
             addTimeObserver()
         } else {
             player?.replaceCurrentItem(with: item)
+            player?.automaticallyWaitsToMinimizeStalling = false
         }
-        // Pre-warm audio session
-        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+        // Pre-warm audio session low latency
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+        try? AVAudioSession.sharedInstance().setPreferredIOBufferDuration(0.02)
     }
 
     func togglePlayPause(focusController: IOSFocusController) {
